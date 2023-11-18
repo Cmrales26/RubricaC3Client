@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await registerRequest(user);
       console.log(res.data.token);
-      cookies.set("token", login.data.token);
+      cookies.set("token". login.data.token);
       setUser(res.data.newUser);
       setIsAuth(true);
       window.locate.href = "/buy";
