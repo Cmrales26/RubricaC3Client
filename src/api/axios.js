@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_SERVER_URL || 'http://localhost:3500/api';
+
 const instance = axios.create({
-    baseURL: 'https://rubricac3backend.onrender.com/api',
+    baseURL,
     withCredentials: true
 })
 
-export default instance
+export default instance;

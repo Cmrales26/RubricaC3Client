@@ -5,6 +5,7 @@ import {
   verifyTokenReques,
   LoginoutRequest,
 } from "../api/auth";
+
 import Cookies from "universal-cookie";
 
 export const authContext = createContext();
@@ -27,7 +28,8 @@ export const AuthProvider = ({ children }) => {
   const signup = async (user) => {
     try {
       const res = await registerRequest(user);
-      console.log(res.data);
+      console.log(res.data.token);
+      cookies.set("token", login.data.token);
       setUser(res.data.newUser);
       setIsAuth(true);
     } catch (error) {
@@ -39,7 +41,8 @@ export const AuthProvider = ({ children }) => {
   const signin = async (user) => {
     try {
       const login = await LoginRequest(user);
-      console.log(login.data);
+      console.log(login.data.token);
+      cookies.set("token", login.data.token);
       setUser(login.data.logedUserInfo);
       setIsAuth(true);
     } catch (error) {
