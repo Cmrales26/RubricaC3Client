@@ -18,6 +18,13 @@ hr {
     margin: .5rem 0rem;
 }
 
+.MenuHa-desk {
+    & .btnlogout {
+        background: var(--GenBackground);
+        color: var(--HighPurple);
+    }
+}
+
 
 * {
     margin: 0;
@@ -30,21 +37,27 @@ body {
     background-color: var(--GenBackground);
 }
 
-ul {
-    & li {
-        list-style: none;
 
-        & a {
-            text-decoration: none;
-            color: var(--GenBackground);
+
+.navegacion {
+    background-color: var(--HighPurple);
+    flex: 1;
+
+    & ul {
+        display: flex;
+        padding: 1rem;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & li {
+            list-style: none;
+
+            & a {
+                text-decoration: none;
+                color: var(--GenBackground);
+            }
         }
     }
-
-    padding: 1rem 4rem;
-    background-color: var(--HighPurple);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .navegation {
@@ -62,7 +75,65 @@ ul {
     }
 }
 
-.loginbtn:hover{
+.MenuHa {
+    flex: 3;
+
+    & .navegation {
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 90vh;
+
+        & a {
+            color: var(--HighPurple);
+
+        }
+    }
+}
+
+.bm-burger-button {
+    display: none;
+    position: absolute;
+    width: 35px;
+    height: 30px;
+    top: 35px;
+    right: 36px;
+}
+
+.bm-burger-bars {
+    background: var(--GenBackground);
+    border-radius: 10px;
+    width: 40px;
+}
+
+
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+
+.bm-cross {
+    background: var(--HighPurple);
+}
+
+
+.bm-menu {
+    background: var(--GenBackground);
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.15em;
+}
+
+
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+.loginbtn:hover {
     color: white;
 }
 
@@ -76,15 +147,15 @@ ul {
 
 .btnlogout {
     border: none;
-    background-color: var(--GenBackground);
-    color: var(--HighPurple);
+    background-color: var(--HighPurple);
+    color: var(--GenBackground);
     padding: .5rem 1rem;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.btnlogout:hover{
-    color: white;
+.btnlogout:hover {
+    /* color: white; */
 }
 
 .WelcomeUser {
@@ -336,11 +407,8 @@ textarea {
 
 .createproductcontainer {
     border-radius: 10px;
-    width: fit-content;
     display: flex;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
-    width: 40%;
 
     & .formcreateproduct {
         padding: 2rem;
@@ -721,60 +789,230 @@ footer {
     height: 80vh;
 }
 
-  @media (max-width: 600px) {
-    ul{
+@media (max-width: 750px) {
+
+    .MenuHa-desk {
+        display: none;
+    }
+
+    .bm-burger-button {
+        display: block;
+    }
+
+    .navegacion {
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+
+            & .navegation {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+
+    ul {
         width: 100%
     }
-    .imglogin{
-        text-align: center;
-    }
-    .ContainerLogin{
+
+    .ContainerLogin {
         display: grid;
         grid-template-rows: auto;
         grid-template-columns: 1fr;
         text-align: center;
-        width:100%
+        width: 100%;
+        box-shadow: none;
     }
 
-    .imgCreate{
-        text-align: start;
+    .formLogin {
+        height: 100vh;
+
     }
 
-    .containerCreate{
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr;
+    .imglogin {
         text-align: center;
-        width:100%
+        border-radius: 0px;
+        padding: 2rem;
+
     }
 
-    .footercontainer{
-        display:flex;
+    .imgCreate {
+        text-align: center;
+        border-radius: 0px;
+        padding: 2rem;
+    }
+
+    .containerCreate {
+        box-shadow: none;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        width: 100%
+    }
+
+
+    .footercontainer {
+        /* position: absolute; */
+        display: flex;
         justify-content: center;
         flex-direction: column;
-        align-items:center;
-        /* width:100%;
-         */
+        align-items: center;
     }
 
-    h1{
-       margin-right: 10px;
+    h1 {
+        margin-right: 10px;
     }
 
-    h2{
-        text-align:center;
+    h2 {
+        text-align: center;
     }
 
-    .info{
+    .info {
         color: white;
     }
 
-    p{
-        color:white;
+    p {
         margin-right: 10px;
     }
-    
-    input{
-        width:18rem;
+
+    input {
+        width: 20rem;
     }
-  }
+
+    footer {
+        margin-top: 0rem;
+        text-align: center;
+    }
+
+    .Creatorscontainer {
+        margin-top: 2rem;
+    }
+
+    .Creators {
+        & p {
+            font-size: 14px;
+        }
+
+        & .social {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+
+        & .card {
+            margin: 0;
+            margin-bottom: 2rem;
+            width: 90%;
+        }
+    }
+
+    .createproductcontainer {
+        width: 100%;
+        box-shadow: none;
+        justify-content: center;
+
+        & .formcreateproduct {
+
+            width: 100%;
+            margin-bottom: 2rem;
+
+            & input {
+                width: 20rem;
+            }
+
+            & .textarea {
+                width: 20rem;
+            }
+        }
+
+    }
+
+    .buy {
+        margin: 0;
+    }
+
+
+    .buycontainer {
+        margin-top: 0rem;
+        display: block;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .infoproducSend {
+        margin-top: 2rem;
+    }
+
+
+    .cardpurchase {
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+
+        & .pursashecard {
+            display: block;
+
+            & .prusasheInfo {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .editpurchasecontainer {
+
+        & .cardedirpurchase {
+            margin-top: 0rem;
+            display: block;
+            width: 100%;
+            box-shadow: none;
+
+            & .pursashecard {
+                & h2 {
+                    text-align: left;
+                }
+
+                display: block;
+
+                & .prusasheInfo {
+                    margin-top: 2rem;
+
+                    & p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .cards {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: center;
+
+        & .card {
+            margin: 0;
+            margin-bottom: 2rem;
+            width: 90%;
+        }
+
+        & .productdescription {
+            font-size: 12px;
+            text-align: center
+        }
+
+        & .footercard {
+            padding: .5rem 0rem;
+
+            & .deleteProduct {
+                font-size: 12px;
+            }
+        }
+    }
+}
