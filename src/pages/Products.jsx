@@ -33,42 +33,53 @@ const Products = () => {
     <div className="productscontainer">
       <h1>Products</h1>
       <div className="cards">
-        {products.map((product) => (
-          <div className="card" key={product.Code}>
-            <ProductCard product={product}></ProductCard>
-            <div className="footercard footerreal">
-              <div className="btnsproducts">
-                <button
-                  className="deleteProduct"
-                  onClick={() => {
-                    Swal.fire({
-                      title: "Are you sure?",
-                      text: `You want to delete the product: ${product.name}?`,
-                      icon: "warning",
-                      showCancelButton: true,
-                      confirmButtonColor: "#d33",
-                      cancelButtonColor: "#3085d6",
-                      confirmButtonText: "Yes, Delete",
-                      cancelButtonText: "Cancel",
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        DeleteProducts(product.Code);
-                      }
-                    });
-                  }}
-                >
-                  Delete
-                </button>
-                <Link
-                  className="updateProductbtn"
-                  to={`/products/${product.Code}`}
-                >
-                  Edit
-                </Link>
+        {products.length > 0 ? (
+          <div className="cards">
+            {products.map((product) => (
+              <div className="card" key={product.Code}>
+                <ProductCard product={product}></ProductCard>
+                <div className="footercard footerreal">
+                  <div className="btnsproducts">
+                    <button
+                      className="deleteProduct"
+                      onClick={() => {
+                        Swal.fire({
+                          title: "Are you sure?",
+                          text: `You want to delete the product: ${product.name}?`,
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#d33",
+                          cancelButtonColor: "#3085d6",
+                          confirmButtonText: "Yes, Delete",
+                          cancelButtonText: "Cancel",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            DeleteProducts(product.Code);
+                          }
+                        });
+                      }}
+                    >
+                      Delete
+                    </button>
+                    <Link
+                      className="updateProductbtn"
+                      to={`/products/${product.Code}`}
+                    >
+                      Edit
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        ) : (
+          <div className="NoproductsAdmin">
+            <p>
+              There are no products, to create one go to <br />{" "}
+              <a href="/create/products">Create</a>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

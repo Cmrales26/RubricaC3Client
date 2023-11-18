@@ -18,17 +18,17 @@ const Footer = () => {
               <p>Sharith Blanco</p>
               <div className="social">
                 <div className="">
-                  <a href="">
+                  <a href="https://github.com/Sblanco16" target="_blank">
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
                 </div>
                 <div className="">
-                  <a href="">
+                  <a href="https://twitter.com/_SBlanco11" target="_blank">
                     <i className="fa-brands fa-x-twitter"></i>
                   </a>
                 </div>
                 <div className="">
-                  <a href="">
+                  <a href="https://github.com/Sblanco16" target="_blank">
                     <i className="fa-brands fa-github"></i>
                   </a>
                 </div>
@@ -38,17 +38,20 @@ const Footer = () => {
               <p>Nelson Morlaes</p>
               <div className="social">
                 <div className="">
-                  <a href="">
+                  <a
+                    href="https://www.linkedin.com/in/cmrales26/"
+                    target="_blank"
+                  >
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
                 </div>
                 <div className="">
-                  <a href="">
+                  <a href="https://twitter.com/cmrales26" target="_blank">
                     <i className="fa-brands fa-x-twitter"></i>
                   </a>
                 </div>
                 <div className="">
-                  <a href="">
+                  <a href="https://github.com/cmrales26" target="_blank">
                     <i className="fa-brands fa-github"></i>
                   </a>
                 </div>
@@ -58,17 +61,20 @@ const Footer = () => {
               <p>Diana Vidal</p>
               <div className="social">
                 <div className="">
-                  <a href="">
+                  <a
+                    href="https://www.linkedin.com/in/diana-vidal-4136431b3"
+                    target="_blank"
+                  >
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
                 </div>
                 <div className="">
-                  <a href="">
+                  <a href="https://twitter.com/Dianiscar15" target="_blank">
                     <i className="fa-brands fa-x-twitter"></i>
                   </a>
                 </div>
                 <div className="">
-                  <a href="">
+                  <a href="https://github.com/Dicavimer" target="_blank">
                     <i className="fa-brands fa-github"></i>
                   </a>
                 </div>

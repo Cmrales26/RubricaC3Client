@@ -789,6 +789,17 @@ footer {
     height: 80vh;
 }
 
+.cards {
+    min-height: 70vh;
+}
+
+.NoproductsAdmin {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 750px) {
 
     .MenuHa-desk {
