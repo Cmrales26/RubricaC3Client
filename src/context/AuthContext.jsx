@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
       cookies.set("token", login.data.token);
       setUser(res.data.newUser);
       setIsAuth(true);
+      window.locate.href = "/buy";
     } catch (error) {
       setErros(error.response.data.message);
       console.log(error.response.data.message);
