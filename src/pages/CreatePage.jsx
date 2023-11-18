@@ -14,7 +14,9 @@ const CreatePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuth) navigate("/buy");
+    if (isAuth) {
+      navigate("/buy");
+    }
   }, [isAuth]);
 
   const onSubmit = handleSubmit(async (values) => {
