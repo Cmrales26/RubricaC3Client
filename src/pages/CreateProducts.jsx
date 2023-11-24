@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useProducts } from "../context/ProductsContext";
 
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
+import Loading from "../components/Loading";
 const CreateProducts = () => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -13,6 +15,7 @@ const CreateProducts = () => {
     setValue,
   } = useForm();
 
+  const { user, loading } = useAuth();
   const { createProducts, error, getProduct, updateProduct } = useProducts();
 
   const params = useParams();
@@ -20,7 +23,7 @@ const CreateProducts = () => {
     async function loadproduct() {
       if (params.code) {
         setIsEditing(true);
-        
+
         const product = await getProduct(params.code);
 
         setValue("Code", product.Code);
@@ -40,6 +43,20 @@ const CreateProducts = () => {
       createProducts(values);
     }
   });
+
+  let rol = user.rol;
+  const [redirect, setRedirect] = useState(false);
+
+  useEffect(() => {
+    if (rol !== "admin") {
+      setRedirect(true);
+    }
+  }, [rol]);
+
+  if (redirect) {
+    return <Navigate to="/buy" replace />;
+  }
+  if (loading) return <Loading></Loading>;
   return (
     <section className="CreateAndEditProduct">
       <div className="createproductcontainer">
